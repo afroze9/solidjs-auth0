@@ -1,24 +1,26 @@
 import resolve from '@rollup/plugin-node-resolve';
-import babel from "@rollup/plugin-babel";
+import { babel } from '@rollup/plugin-babel';
 import filesize from 'rollup-plugin-filesize';
 
-export default {
+/** @type { import("rollup").RollupOptions } */
+const rollupConfig = {
   plugins: [
     resolve({
-      extensions: ['.ts', '.tsx']
+      extensions: ['.ts', '.tsx'],
     }),
     babel({
       extensions: ['.ts', '.tsx'],
       babelHelpers: 'bundled',
       presets: ['@babel/preset-typescript', 'babel-preset-solid'],
-      exclude: 'node_modules/**'
+      exclude: 'node_modules/**',
     }),
-    filesize()
+    filesize(),
   ],
   input: 'src/index.tsx',
   external: ['solid-js', '@auth0/auth0-spa-js'],
   output: [
     { file: 'dist/build/index.cjs.js', format: 'cjs' },
-    { file: 'dist/build/index.js', format: 'es' }
-  ]
+    { file: 'dist/build/index.js', format: 'es' },
+  ],
 };
+export default rollupConfig;

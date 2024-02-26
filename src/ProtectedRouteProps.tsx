@@ -1,6 +1,6 @@
-import { RedirectLoginOptions } from "@auth0/auth0-spa-js";
-import { Context, JSX } from "solid-js";
-import { Auth0State } from "./Auth0State";
+import { RedirectLoginOptions } from '@auth0/auth0-spa-js';
+import { Context, JSX } from 'solid-js';
+import { Auth0State } from './Auth0State';
 
 /**
  * Props for a component that wraps a protected route in the application, ensuring that the user is authenticated before rendering the content.

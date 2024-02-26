@@ -1,0 +1,5 @@
+{
+  "ignorePatterns": ["dist/", "node_modules/"],
+  "plugins": ["solid"],
+  "extends": ["eslint-config-atomic", "plugin:solid/recommended"]
+}
